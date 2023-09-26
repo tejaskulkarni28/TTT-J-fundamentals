@@ -9,6 +9,7 @@ class loadGameClass{
         initBoard();
     }
 
+    // method used to initiate blank spaces
     public void initBoard(){
         for(int i=0; i<xos.length; i++){
             for(int j=0; j<xos[i].length; j++){
@@ -17,7 +18,8 @@ class loadGameClass{
         }
     }
 
-    public void loadBoard(){
+    // method to print the board
+    public void printBoard(){
         System.out.println("---------------");
         for(int i=0; i<xos.length; i++){
             System.out.print(" | ");
@@ -28,6 +30,11 @@ class loadGameClass{
             System.out.println("---------------");
         }
     }
+
+    // method for placing the mark in the boxes
+    public void placeMark(int row, int col, char markXOS){
+        xos[row][col] = markXOS;
+    }
 }
 
 public class Main {
@@ -35,6 +42,7 @@ public class Main {
     public static void main(String args[]) {
 	// write your code here
         loadGameClass ref = new loadGameClass();
-        ref.loadBoard();
+        ref.placeMark(1, 1, 'X');
+        ref.printBoard();
     }
 }
